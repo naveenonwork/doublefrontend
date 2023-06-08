@@ -26,6 +26,7 @@
     "@types/three": "^0.152.0",
     "@vitejs/plugin-react": "1.2.0",
     "axios": "^1.4.0",
+    "cloudinary": "^1.37.0",
     "framer-motion": "^10.12.11",
     "fs": "^0.0.1-security",
     "react": "^18.2.0",

@@ -3,10 +3,10 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import https from "https";
 import react from "@vitejs/plugin-react";
-
- 
+//https://doubledeploy.vercel.app
+//http://127.0.0.1:${process.env.BACKEND_PORT}
 const proxyOptions = {
-  target: `https://doubledeploy.vercel.app`,
+  target: `https://double-backend.onrender.com/`,
   changeOrigin: true,
   secure: true,
   ws: false,
