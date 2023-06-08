@@ -115,7 +115,7 @@ const LowerGarmentGlb = ({ lowerGarmentGlb }) => {
   );
 };
 
-const HomePage = ({ name }) => {
+const Test2 = ({ name }) => {
  
   const [glbUrl, setGlbUrl] = useState("");
   const [mask, setMask] = useState("");
@@ -371,7 +371,7 @@ const HomePage = ({ name }) => {
   );
 };
 
-export default HomePage;
+export default Test2;
 
 // const SizeButtons = ({ selectedSize, setSelectedSize }) => {
 
