@@ -26,10 +26,10 @@ if (host === "localhost") {
   };
 } else {
   hmrConfig = {
-    protocol: "wss",
+    protocol: "ws",
     host: host,
     port: process.env.FRONTEND_PORT,
-    clientPort: 443,
+    clientPort: process.env.FRONTEND_PORT,
   };
 }
 
