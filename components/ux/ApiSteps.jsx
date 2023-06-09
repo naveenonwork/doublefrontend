@@ -56,7 +56,7 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
   const [photoCheck, setPhotoCheck] = useState(false);
   const [heightCheck, setHeightCheck] = useState(false);
   const [genderCheck, setGenderCheck] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [step, setStep] = useState(0);
   const [currentModel, setCurrentModel] = useState(
@@ -165,7 +165,33 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
               <div class="dot-overtaking"></div>
               <h2>Generating Avatar{userName && ` for ${userName}`}...</h2>
             </div>
-            <LoadingScene />
+            <Canvas  shadows>
+                  <Suspense fallback={null}>
+                    <Stage
+                      intensity={0.5}
+                      preset="rembrandt"
+                      environment={false}
+                      shadows={{
+                        type: "contact",
+                        color: "black",
+                        files: "./littleParis.hdr",
+                        colorBlend: 2,
+                        opacity: 1,
+                        bias: -0.001,
+                      }}
+                      adjustCamera={true}
+                    >
+                      <Center>
+                        <GW3D castShadow receiveShadow />
+                        {/* <Center position={[0, -0.3, 0]}></Center> */}
+                        {/* <OrbitControls /> */}
+                        <Showroom castShadow receiveShadow scale={1.7} />
+                      </Center>
+                    </Stage>
+                    <Rigg />
+                    {/* <OrbitControls /> */}
+                  </Suspense>
+                </Canvas>
           </div>
         </Reveal>
       ) : (
