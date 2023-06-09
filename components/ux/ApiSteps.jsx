@@ -164,7 +164,7 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
       {isLoading ? (
         <Reveal>
           <div className="loading-screen">
-         <LoadingScene/>
+         {/* <LoadingScene/> */}
           </div>
             <div className="loading-text">
               <div class="dot-overtaking"></div>

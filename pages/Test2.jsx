@@ -245,7 +245,7 @@ const Test2 = ({ name }) => {
         {showModel && step === 1 && (
           <Reveal>
           <div className="user-container">
-            <h3>{user}'s Avatar</h3>
+            <h3>{user ? `${user}'s` : 'Guest'} Avatar</h3>
           </div>
             <div className="canvas-wrapper">
               <Canvas>
