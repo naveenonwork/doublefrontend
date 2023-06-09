@@ -21,6 +21,9 @@ import LoadingScene from "../3d/LoadingScene";
 import Rigg from "../3d/Rigg";
 // import ReactSlider from "react-slider";
 // import "react-slider/dist/index.css";
+import maleIcon from '../../assets/images/MaleIconBlack.png';
+import femaleIcon from '../../assets/images/FemaleIconBlack.png';
+
 
 const female =
   "https://res.cloudinary.com/dt4up0c48/image/upload/v1686171894/AvatarF_lr61o9.glb";
@@ -161,38 +164,12 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
       {isLoading ? (
         <Reveal>
           <div className="loading-screen">
+         <LoadingScene/>
+          </div>
             <div className="loading-text">
               <div class="dot-overtaking"></div>
               <h2>Generating Avatar{userName && ` for ${userName}`}...</h2>
             </div>
-            <Canvas  shadows>
-                  <Suspense fallback={null}>
-                    <Stage
-                      intensity={0.5}
-                      preset="rembrandt"
-                      environment={false}
-                      shadows={{
-                        type: "contact",
-                        color: "black",
-                        files: "./littleParis.hdr",
-                        colorBlend: 2,
-                        opacity: 1,
-                        bias: -0.001,
-                      }}
-                      adjustCamera={true}
-                    >
-                      <Center>
-                        <GW3D castShadow receiveShadow />
-                        {/* <Center position={[0, -0.3, 0]}></Center> */}
-                        {/* <OrbitControls /> */}
-                        <Showroom castShadow receiveShadow scale={1.7} />
-                      </Center>
-                    </Stage>
-                    <Rigg />
-                    {/* <OrbitControls /> */}
-                  </Suspense>
-                </Canvas>
-          </div>
         </Reveal>
       ) : (
         <Reveal>
@@ -285,13 +262,13 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
 
                     <div className="gender-input">
                       <img
-                        src="../../assets/images/MaleIconBlack.png"
+                        src={maleIcon}
                         alt="Male"
                         onClick={() => handleGenderSelection("M")}
                         className={gender === "M" ? "selected" : ""}
                       />
                       <img
-                        src="../../assets/images/FemaleIconBlack.png"
+                        src={femaleIcon}
                         alt="Female"
                         onClick={() => handleGenderSelection("F")}
                         className={gender === "F" ? "selected" : ""}

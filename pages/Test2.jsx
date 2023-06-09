@@ -98,7 +98,7 @@ const UpperGarmentGlb = ({ garmentGlb }) => {
     <primitive
       object={scene.scene}
       // scale={2.05}
-      position={[0,0, -0.002]}
+      position={[0,0, -0.01]}
     />
   );
 };
@@ -244,6 +244,9 @@ const Test2 = ({ name }) => {
         )}
         {showModel && step === 1 && (
           <Reveal>
+          <div className="user-container">
+            <h3>{user}'s Avatar</h3>
+          </div>
             <div className="canvas-wrapper">
               <Canvas>
                 <Stage
