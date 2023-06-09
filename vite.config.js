@@ -44,8 +44,8 @@ export default defineConfig({
     server: { https: true },
     proxy: {
       "^/(\\?.*)?$": proxyOptions,
-      "^/api(/|(\\?.*)?$)": proxyOptions,
-      "^/static(/|(\\?.*)?$)": proxyOptions,
+      "^/api(/|(\\?.*)?$)": proxyOptions 
+      
     },
   },
 });

@@ -151,7 +151,7 @@ const Test2 = ({ name }) => {
     };
 
     try {
-      const response = await fetch("/static/garment", payload) //cambiar testgarment a garment
+      const response = await fetch("https://double-backend.onrender.com/static/garment", payload) //cambiar testgarment a garment
         .then((response) => response.json())
         .then((data) => {
           console.log("garment api response", data);

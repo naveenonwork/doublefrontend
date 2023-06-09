@@ -79,7 +79,7 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
       formdata.append("session_id", "1");
       formdata.append("gender", gender.toLowerCase());
 
-      const response = await fetch("/static/avatar", {
+      const response = await fetch("https://double-backend.onrender.com/static/avatar", {
         method: "POST",
         body: formdata,
       });
