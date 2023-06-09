@@ -49,6 +49,7 @@ const ModelViewer = ({ url }) => {
 };
 
 const ApiSteps = ({ onFormSubmit, onUserName }) => {
+  const [introButton, setIntroButton] = useState(false);
   const [photo, setPhoto] = useState([]);
   const [height, setHeight] = useState("");
   const [gender, setGender] = useState("");
@@ -64,6 +65,10 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
   const [userName, setUserName] = useState("");
   const isSubmitDisabled = !(photoCheck && heightCheck && genderCheck);
 
+  const handleClick = () => {
+    setIntroButton(true);
+  };
+
   const onChangePhoto = (e) => {
     setPhoto(e.target.files[0]);
     setPhotoCheck(true);
@@ -76,13 +81,16 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
       const formdata = new FormData();
       formdata.append("file", photo);
       formdata.append("size", height);
-      formdata.append("session_id", "1");
+      formdata.append("session_id", "male1");
       formdata.append("gender", gender.toLowerCase());
 
-      const response = await fetch("https://double-backend.onrender.com/static/avatar", {
-        method: "POST",
-        body: formdata,
-      });
+      const response = await fetch(
+        "https://double-backend.onrender.com/static/avatar",
+        {
+          method: "POST",
+          body: formdata,
+        }
+      );
 
       if (response.ok) {
         response.json().then(function (data) {
@@ -173,8 +181,8 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
               {/* <div class="dot-overtaking"></div> */}
 
               <div className="loading-screen">
-                <Suspense fallback={null}>
-                  <Canvas shadows>
+                <Canvas onClick={handleClick} shadows>
+                  <Suspense fallback={null}>
                     <Stage
                       intensity={0.5}
                       preset="rembrandt"
@@ -198,19 +206,21 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
                     </Stage>
                     <Rigg />
                     {/* <OrbitControls /> */}
-                  </Canvas>
-                </Suspense>
+                  </Suspense>
+                </Canvas>
               </div>
               {/* </div> */}
-              <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 4.2, duration: 1.3 }}
-                className="next-btn"
-                onClick={() => setCurrentStep(1)}
-              >
-                <span class="arrow"></span>
-              </motion.button>
+              {introButton && (
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 1.3 }}
+                  className="next-btn"
+                  onClick={() => setCurrentStep(1)}
+                >
+                  <span className="arrow"></span>
+                </motion.button>
+              )}
             </Reveal2>
           )}
           {currentStep === 1 && (

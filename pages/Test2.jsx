@@ -98,7 +98,7 @@ const UpperGarmentGlb = ({ garmentGlb }) => {
     <primitive
       object={scene.scene}
       // scale={2.05}
-      // position={[.013, 0.026, 0.02]}
+      position={[0,0, -0.002]}
     />
   );
 };
@@ -116,8 +116,7 @@ const LowerGarmentGlb = ({ lowerGarmentGlb }) => {
 };
 
 const Test2 = ({ name }) => {
- 
-  const [glbUrl, setGlbUrl] = useState("");
+   const [glbUrl, setGlbUrl] = useState("");
   const [mask, setMask] = useState("");
   const [maskUrl, setMaskUrl] = useState("");
   const [modelUrl, setModelUrl] = useState("");
@@ -137,8 +136,8 @@ const Test2 = ({ name }) => {
     event.preventDefault();
     setShowGarment(true);
     setGarmentLoad(true);
-    var productid = "034125001";
-    var session = "1";
+    var productid = "ed56cb15a";
+    var session = "male1";
     // var size = selectedSize;
     const payload = {
       method: "POST",
@@ -290,7 +289,7 @@ const Test2 = ({ name }) => {
                         maxPolarAngle={Math.PI / 1.4}
                         enablePan={false}
                       />
-                      <ambientLight intensity={1} />
+                      <pointLight intensity={1.5} position={[0,2,-3]} color={'hsl(24, 90%, 84%)'} />
                       <RingLight garmentLoad={garmentLoad} />
                     </>
                   ) : null}
