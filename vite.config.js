@@ -26,9 +26,10 @@ if (host === "localhost") {
   };
 } else {
   hmrConfig = {
-    protocol: "wss",
-    host: host 
-    
+    protocol: "ws",
+    host: "localhost",
+    port: 64999,
+    clientPort: 64999,
   };
 }
 
