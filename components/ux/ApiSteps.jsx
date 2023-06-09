@@ -56,7 +56,7 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
   const [photoCheck, setPhotoCheck] = useState(false);
   const [heightCheck, setHeightCheck] = useState(false);
   const [genderCheck, setGenderCheck] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [currentStep, setCurrentStep] = useState(0);
   const [step, setStep] = useState(0);
   const [currentModel, setCurrentModel] = useState(

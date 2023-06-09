@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Loader, useGLTF as useGLTFImpl } from "@react-three/drei";
+import { Loader, useGLTF} from "@react-three/drei";
 
 
 function Showroom(props) {
