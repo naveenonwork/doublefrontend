@@ -379,7 +379,7 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
                       <input
                         id="photo-input"
                         type="file"
-                        accept="image/gif, image/png, image/jpeg, image/gif, image/jpg, image/heic"
+                        accept="image/*"
                         onChange={(e) => {
                           onChangePhoto(e);
                         }}
