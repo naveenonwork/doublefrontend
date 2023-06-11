@@ -98,7 +98,7 @@ const UpperGarmentGlb = ({ garmentGlb }) => {
     <primitive
       object={scene.scene}
       // scale={2.05}
-      position={[0,0, -0.01]}
+      position={[0.004,0, -0.01]}
     />
   );
 };
@@ -110,7 +110,7 @@ const LowerGarmentGlb = ({ lowerGarmentGlb }) => {
     <primitive
       object={scene.scene}
       // rotation={[-0.01, 0, 0]}
-      // position={[-0.01, 0, 0.06]}
+      position={[-0.01, 0, 0.006]}
     />
   );
 };

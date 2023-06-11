@@ -75,7 +75,6 @@ const ApiSteps = ({ onFormSubmit, onUserName }) => {
   const onChangePhoto = (e) => {
     setPhoto(e.target.files[0]);
     setPhotoCheck(true);
-    // console.log(photo);
   };
 
   const handleSubmit = async (event) => {
